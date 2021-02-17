@@ -1,0 +1,26 @@
+field = [[' ', '0', '1', '2'],  ['0', '-', '-', '-'], ['1', '-', '-', '-'], ['2', '-', '-', '-']]
+
+
+def play_game():
+
+    second = int(input("Верхняя координата "))
+    first = int(input('Нижняя координата '))
+    value_play_game = str(input("Значение "))
+
+    field[first + 1][second + 1] = value_play_game
+    for i in range(len(field)):
+        print(' '.join(field[i]))
+
+
+
+print(f'  {" ".join(field[0])} \n {" ".join(field[1])} \n {" ".join(field[2])} \n {" ".join(field[3])}')
+x = 0
+while x != 8:
+    play_game()
+    x += 1
+    if  field[1][1] == field[2][2] == field[2][2]:
+        print(f'{field[1][1]} is win')
+        break
+    elif field[1][1] == field[1][2] == field[1][2]:
+        print(f'{field[1][1]} is win')
+        break
